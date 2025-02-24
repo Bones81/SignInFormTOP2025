@@ -1,78 +1,177 @@
 @font-face {
-    font-family: 'Norse Bold';
-    src: url(fonts/Norse-Bold.otf);
+  font-family: "Norse Bold";
+  src: url(fonts/Norse-Bold.otf);
+}
+
+:root {
+  --green: #596d48;
 }
 
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-family: sans-serif;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: sans-serif;
 }
 
 .form-container {
-    width: 90%;
-    height: 80vh;
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-    justify-content: flex-start;
-    align-items: center;
+  /* width: 90%; */
+  height: 100vh;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+  align-items: center;
 }
 
 img {
-    width: 100%;
+  width: 100%;
 }
 
-figure {
-    position: relative;
-    width: 30%;
+.image-and-logo {
+  position: relative;
+  width: 40%;
+  height: 100%;
+  background: url(./img/halie-west-25xggax4bSA-unsplash.jpg);
+  background-size: cover;
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: space-between;
+  align-items: center;
 }
 
 figcaption {
-    color: white;
-    position: absolute;
-    bottom: 1rem;
-    transform: translateX(50%)
+  color: white;
+  font-size: 0.5rem;
+  padding: 0.5rem;
 }
 
 figcaption a {
-    color: white;
+  color: #ccc;
 }
 
 .semi-transparent {
-    width: 100%;
-    height: 150px;
-    background-color: rgba(0, 0, 0, 0.3);
-    position: absolute;
-    top: 30%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+  width: 100%;
+  height: 15%;
+  background-color: rgba(0, 0, 0, 0.3);
+  display: flex;
+  flex-flow: row nowrap;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  top: 22%;
 }
 
 .semi-transparent > img {
-    max-height: 100%;
-    max-width: 25%;
-    object-fit: contain;
+  max-height: 87%;
+  max-width: 16%;
+  object-fit: contain;
 }
 
 .odin-text {
-    font-family: 'Norse Bold', sans-serif;
-    color: white;
-    font-size: 6rem;
+  font-family: "Norse Bold", sans-serif;
+  color: white;
+  font-size: 3.75rem;
+  height: 45%; /* Norse Bold font weirdly aligns to the top of the line and leave an annoying gap below, making centering text vertically a royal pain. This height adjustment shifted its vertical alignment enough (with the flexbox center alignment) to get the text into more-or-less the correct vertical location.*/
 }
 
-form {
-    flex-basis: 60%;
+.controls-and-heading-no-button {
+  display: flex;
+  flex-flow: row wrap;
+  gap: 1rem 3rem;
+  padding: 0.75rem 2rem 1rem;
+  background-color: white;
+  box-shadow: 0 2px 2px 2px #ddd;
+  height: 180px;
 }
 
-
-*:invalid {
-    border: 1px solid red;
+.form-content {
+  max-width: 60%;
+  height: 100%;
+  background-color: rgb(250, 250, 250);
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: center;
 }
 
-*:focus {
-    border: 1px solid blue;
-    box-shadow: 2px 2px 2px 5px black;
+.form-intro, .controls-and-heading-no-button, .submit-div {
+    flex-shrink: 1;
+    flex-basis: 21%;
+
+}
+
+.form-intro {
+  padding: 0;
+  flex-basis: 10%;
+  /* display: flex;
+  flex-flow: column nowrap;
+  justify-content: flex-end; */
+}
+
+.form-heading,
+.form-intro {
+  width: 100%;
+}
+
+.form-intro h3 {
+  margin: 1.5rem 2rem;
+}
+
+h3 {
+    font-size: 0.85rem;
+    width: 80%;
+}
+
+.form-control {
+  display: flex;
+  flex-flow: column;
+  width: 33%;
+}
+
+label {
+  text-transform: uppercase;
+  font-size: 0.4rem;
+  color: #333;
+  letter-spacing: 0.25ch;
+  font-weight: bold;
+}
+
+input:invalid {
+  border: 1px solid red;
+}
+
+input:focus {
+  border: 1px solid blue;
+  box-shadow: 1px 2px 2px 2px rgba(40, 40, 40, 0.1);
+}
+
+input {
+  border-radius: 3px;
+  border: 1px solid #e5e7eb;
+  padding: 0.25rem 0.5rem;
+  font-size: 0.65rem;
+  height: 19px;
+}
+
+button {
+  background-color: var(--green);
+  color: white;
+  padding: 0.5rem 2rem;
+  margin: 1.5rem 2rem;
+  border: none;
+  border-radius: 5px;
+  font-size: 0.7rem;
+  box-shadow: 0 2px 5px 2px #ccc;
+  cursor: pointer;
+}
+
+.login-option {
+  margin: 0 2rem;
+  font-size: 0.7rem
+}
+
+.login-option a {
+  text-decoration: none;
+  color: var(--green);
+  font-weight: bold;
 }
